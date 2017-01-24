@@ -1,100 +1,110 @@
+/*.body-big{*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*overflow: hidden;*/
+    /*position: absolute;*/
+/*}*/
+/*.body-big .row{*/
+    /*height: 100%;*/
+/*}*/
+/*.left-menu{*/
+    /*position: relative;*/
+    /*background-color: #ffffff;*/
+    /*width: 75px;*/
+/*}*/
+/*.left-menu-right{*/
+    /*background-color: #31bf9f;*/
+/*}*/
+/*.top-body{*/
+    /*height: 10%;*/
+/*}*/
+/*.bottom-body{*/
+    /*height: 90%;*/
+/*}*/
+/*.body-right{*/
+    /*position: relative;*/
+    /*width: calc(100% - 75px);*/
+/*}*/
+/*.body-right .box{*/
+    /*height: 100%;*/
+/*}*/
+/*.home-background{*/
+    /*background-color: #4285f4;*/
+    /*height: 100%;*/
+/*}*/
+/*.alert-background{*/
+    /*background-color: #d75050;*/
+    /*height: 100%;*/
+/*}*/
+/*.patient-background{*/
+    /*background-color: #575757;*/
+    /*height: 100%;*/
+/*}*/
+/*.message-background{*/
+    /*background-color: #31bf9f;*/
+    /*height: 100%;*/
+/*}*/
+/*.care-plan-background{*/
+    /*background-color: #4285f4;*/
+    /*height: 100%;*/
+/*}*/
+/*.body-row{*/
+    /*height: 100%;*/
+    /*margin-left: 10px !important;*/
+/*}*/
+/*.card{*/
+    /*height: calc(100% - 52px);*/
+    /*width: 266px;*/
+    /*z-index: 1;*/
+    /*-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);*/
+    /*-moz-box-shadow:    0 0 20px 0 rgba(0, 0, 0, 0.2);*/
+    /*box-shadow:         0 0 20px 0 rgba(0, 0, 0, 0.2);*/
+    /*background-color: #ffffff;*/
+    /*border-top-right-radius: 10px;*/
+    /*border-top-left-radius: 10px;*/
+/*}*/
+/*.card-details{*/
+    /*padding: 0px !important;*/
+    /*position: relative;*/
+    /*height: calc(100% - 62px);*/
+    /*top: 10px;*/
+    /*overflow: hidden;*/
+    /*background-color: #ffffff;*/
+/*}*/
+/*.full-screen{*/
+    /*height: calc(100% - 52px);*/
+    /*background-color: #00b3ee;*/
+    /*padding: 0px !important;*/
+    /*position: relative;*/
+/*}*/
+/*.full-screen .box .full-tool-bar{*/
+    /*width: 100%;*/
+    /*height: 62px;*/
+    /*background-color: red;*/
+/*}*/
+/*.full-screen .box .full-body-with-toolbar{*/
+    /*overflow-y: auto;*/
+    /*background-color: #de66a3;*/
+    /*height: calc(100% - 62px);*/
+/*}*/
+/*.full-screen .box .full-body-without-toolbar{*/
+    /*overflow-y: auto;*/
+    /*background-color: #de66a3;*/
+    /*height: calc(100%);*/
+/*}*/
 
-.blue-back {
-    background-color: blue;
-    height: 100%;
-}
-.red-back {
-    background-color: red;
-}
-.yellow-back {
-    background-color: yellow;
-}
-.green-back {
-    background-color: green;
-}
-.blue {
-    color: blue;
-}
-.red {
-    color: red;
-}
-.yellow {
-    color: yellow;
-}
-.green {
-    color: green;
-}
-
-.body-big{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-}
-.body-big .row{
-    height: 100%;
-}
-.left-menu{
-    position: relative;
-    background-color: #ffffff;
-    width: 75px;
-}
-.left-menu-right{
-    background-color: #31bf9f;
-}
-.top-body{
-    height: 10%;
-}
-.bottom-body{
-    height: 90%;
-}
-.body-right{
-    position: relative;
-    background-color: #31bf9f;
-    width: calc(100% - 75px);
-}
-.body-right .box{
-    height: 100%;
-}
-.body-row{
-    height: 100%;
-    margin-left: 10px !important;
-}
-.card{
-    height: calc(100% - 52px);
-    width: 266px;
-    z-index: 1;
-    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow:    0 0 20px 0 rgba(0, 0, 0, 0.2);
-    box-shadow:         0 0 20px 0 rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-.card-details{
-    padding: 0px !important;
-    position: relative;
-    height: calc(100% - 62px);
-    top: 10px;
-    overflow: hidden;
-    background-color: #ffffff;
-}
-.full-screen{
-
-}
-
-.top-toolbar-body{
-    height: 75px;
-    background-color: #cccccc;
-}
-.body-scroll{
-    height: calc(100% - 62px - 75px);
-    width: 100%;
-    position: fixed;
-    top: 137px;
-    overflow: auto;
-    background-color: #f2f2f2;
-}
-.top-shell{
-    height: 62px;
-}
+/*.top-toolbar-body{*/
+    /*height: 75px;*/
+    /*background-color: #cccccc;*/
+/*}*/
+/*.body-scroll{*/
+    /*height: calc(100% - 62px - 75px);*/
+    /*width: 100%;*/
+    /*position: fixed;*/
+    /*top: 137px;*/
+    /*overflow: auto;*/
+    /*background-color: #f2f2f2;*/
+/*}*/
+/*.top-shell{*/
+    /*height: 62px;*/
+/*}*/

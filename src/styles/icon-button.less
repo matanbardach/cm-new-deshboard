@@ -1,0 +1,75 @@
+
+&.bar_disable {
+  cursor:default !important;
+  svg path {
+    fill: @rgularBar;
+  }
+}
+
+&.blue_bar {
+      svg path {
+        fill: @blueBarRegular;
+      }
+}
+
+&.blue_bar:hover {
+  &:active {
+        svg path {
+          fill: @blueBarClick;
+        }
+  }
+  svg path {
+    fill: @blueBarHover;
+  }
+}
+
+&.red_bar {
+  svg path {
+    fill: @redBarRegular;
+  }
+}
+
+&.red_bar:hover {
+  &:active {
+    svg path {
+      fill: @redBarClick;
+    }
+  }
+  svg path {
+    fill: @redBarHover;
+  }
+}
+
+&.green_bar {
+  svg path {
+    fill: @greenBarRegular;
+  }
+}
+
+&.green_bar:hover {
+  &:active {
+    svg path {
+      fill: @greenBarClick;
+    }
+  }
+  svg path {
+    fill: @greenBarHover;
+  }
+}
+
+&.grey_bar {
+  svg path {
+    fill: @greyBarRegular;
+  }
+}
+
+&.grey_bar:hover {
+  &:active {
+    svg path {
+      fill: @greyBarClick;
+    }
+  }
+  svg path {
+    fill: @greyBarHover;
+  }
+}

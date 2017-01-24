@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="20px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>little_sleep</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="New-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Patient's-Alert" sketch:type="MSArtboardGroup" transform="translate(-128.000000, -432.000000)" fill="#FA893F">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(90.000000, 62.000000)">
+                <g transform="translate(34.000000, 301.000000)" id="Group-Copy-2" sketch:type="MSShapeGroup">
+                    <g transform="translate(0.000000, 27.000000)">
+                        <g transform="translate(3.000000, 0.000000)">
+                            <g id="little_sleep-+-bar-top-copy-9-+-bar-top-copy-8" transform="translate(1.000000, 42.000000)">
+                                <path d="M1.33668981,15.002883 C-1.42245453,10.2203662 0.233032072,4.08893435 4.98489176,1.32979001 C6.6097212,0.379418077 8.51046507,-0.0804393115 10.3805518,0.0115321663 C10.8404092,0.0421893255 11.2389522,0.2874466 11.4228952,0.68598967 C11.6374953,1.08453274 11.576181,1.57504729 11.3309237,1.9429332 C9.79806576,4.15024867 9.67543712,7.09333595 11.0243521,9.3926229 C12.2812957,11.538624 14.5805826,12.8875391 17.0944697,12.8875391 C17.2784126,12.8875391 17.4623556,12.8875391 17.6462985,12.8568819 C18.1061559,12.8262247 18.5353561,13.0408248 18.7806134,13.4087108 C19.0258707,13.7765967 19.0565279,14.2671112 18.8419277,14.6656543 C17.9528701,16.351798 16.6346123,17.7313702 14.9791257,18.6817422 C13.4769249,19.5401426 11.760124,20 10.0126659,20 C6.4564354,20 3.11480504,18.068599 1.33668981,15.002883 Z" id="little_sleep"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

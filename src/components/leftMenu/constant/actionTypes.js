@@ -1,0 +1,6 @@
+export const HOME_CLICK = 'HOME_CLICK';
+export const ALERT_CLICK = 'ALERT_CLICK';
+export const PATIENT_CLICK = 'PATIENT_CLICK';
+export const MESSAGE_CLICK = 'MESSAGE_CLICK';
+export const CARE_PLAN_CLICK = 'CARE_PLAN_CLICK';
+export const CHANGE_LAYOUT_SECTION = 'CHANGE_LAYOUT_SECTION';

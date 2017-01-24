@@ -1,0 +1,23 @@
+@numOfMenuIcons: 5;
+@baseSizeMenuIcons: 60;   // sx = 60 sm = 72 medium = 96 large = 120
+@menuSize: @baseSizeMenuIcons * @numOfMenuIcons;    // 72 * 5
+//height: ~"calc(100% - @{topBottomSize})";
+// calc((100% - 360px)/2);
+.menu_bar{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .top_section{
+    height: ~"calc((100% - @{menuSize}px)/2)";
+    background-color: #ffffff;
+  }
+  .center_section{
+    padding-left: 15px;
+    height: ~"calc(@{menuSize}px)";
+    background-color: #ffffff;
+  }
+  .bottom_section{
+    height: ~"calc((100% - @{menuSize}px)/2)";
+    background-color: #ffffff;
+  }
+}

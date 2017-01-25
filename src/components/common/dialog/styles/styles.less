@@ -1,0 +1,51 @@
+.dialogButton{
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4285f4;
+}
+.my-row{
+  width: 100%;
+  .section-right{
+    width: 5%;
+    height: 100%;
+  }
+  .section-center{
+    width: 65%;
+    height: 100%;
+  }
+  .section-right{
+    padding-top: 7px;
+    width: 30%;
+    height: 100%;
+    text-align: -webkit-right
+  }
+}
+@topDialog: 75;
+@heightDialog: 550;
+@widthDialog: 550;
+@bodyDialog: @heightDialog - @topDialog;
+
+.dialog-box{
+  padding: 0px !important;
+  max-height: ~"calc(@{heightDialog}px)";
+  .dialog-top{
+    height:  ~"calc(@{topDialog}px)";
+    border-bottom: solid 2px #cccccc;
+    padding: 10px;
+  }
+  .dialog-body{
+    height: ~"calc(@{bodyDialog}px)";
+    background-color: #f2f2f2;
+    overflow: auto;
+  }
+}
+
+.arrange-horizontally > * {
+  display: inline-block;
+  text-align: center;
+}
+.arrange-vertically > * {
+  display: block;
+}

@@ -4,6 +4,10 @@ import IconButton from 'material-ui/IconButton';
 import Icons from '../icons/icons';
 
 const styles = {
+    xsXsSmallIcon: {
+        width: 15,
+        height: 15
+    },
     xsSmallIcon: {
         width: 30,
         height: 30
@@ -19,6 +23,11 @@ const styles = {
     largeIcon: {
         width: 60,
         height: 60
+    },
+    xsXsSmall: {
+        width: 30,
+        height: 30,
+        padding: 6
     },
     xsSmall: {
         width: 60,
@@ -52,6 +61,14 @@ const ButtonIcon = ({tooltipString, classN, disable, size, tooltipPosition, icon
     };
     let iconStyle = 'my-icons-style-small';
     switch (size){
+        case 'xsXsSmall':{
+            myStyle = {
+                iconStyle: styles.xsXsSmallIcon,
+                style: styles.xsXsSmall
+            };
+            iconStyle = 'my-icons-style-xs-xs-small';
+            break;
+        }
         case 'xsSmall':{
             myStyle = {
                 iconStyle: styles.xsSmallIcon,

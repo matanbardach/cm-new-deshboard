@@ -5,6 +5,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import ButtonIcon from '../../common/button/buttonIcon';
 import * as actions from './actions';
 import './styles/styles.less';
 
@@ -14,7 +15,7 @@ class MyDialog extends React.Component {
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.closeDialog = this.closeDialog.bind(this);
-        //this.setState({open: false});
+        this.chengText = this.chengText.bind(this);
     }
 
     handleOpen(){
@@ -31,6 +32,10 @@ class MyDialog extends React.Component {
         const action = this.props.actions;
         action.closeDialog('tryClose');
     }
+    chengText(){
+        const action = this.props.actions;
+        action.changeBuText('Next');
+    }
 
     render() {
         const styles = {
@@ -42,7 +47,7 @@ class MyDialog extends React.Component {
             <FlatButton
                 label="Cancel"
                 primary={true}
-                onClick={this.handleOpen}
+                onClick={this.chengText}
                 onTouchTap={this.handleOpen}
             />,
             <FlatButton
@@ -54,50 +59,12 @@ class MyDialog extends React.Component {
             />
         ];
 
-        const radios = [];
-        for (let i = 0; i < 30; i++) {
-            radios.push(
-                <RadioButton
-                    key={i}
-                    value={`value${i + 1}`}
-                    label={`Option ${i + 1}`}
-                    style={styles.radioButton}
-                />
-            );
-        }
-        const self = this;
-        const topSectionHtml = '<div class="row">' +
-                                    '<div class="col-xs-4">' +
-                                        '<div class="box">' +
-                                            'Left'+
-                                        '</div>' +
-                                    '</div>' +
-                                   '<div class="col-xs-6">' +
-                                        '<div class="box">' +
-                                            'Center'+
-                                        '</div>' +
-                                    '</div>' +
-                                   '<div class="col-xs-2">' +
-                                         '<div class="box">' +
-                                            '<button class="dialogButton" onclick={this.closeDialog}>Submit</button>'+
-                                         '</div>' +
-                                   '</div>' +
-                               '</div>';
 
-        const topSectionHtm2 = '<div class="my-row arrange-horizontally">' +
-                                        '<div class="section left">' +
-                                                'Left'+
-                                        '</div>' +
-                                        '<div class="section center">' +
-                                                'Center'+
-                                        '</div>' +
-                                        '<div class="section right">' +
-                                            '<button class="dialogButton" onclick={this.closeDialog}>Submit</button>'+
-                                        '</div>' +
-                                '</div>';
+        //console.log("hhhhhhhhhhhhhhhhhhhhhh: ",this.props.myBodyCmpo);
+        const BodyComponent =  this.props.myBodyComponent;
         return (
             <div>
-                <RaisedButton label="Scrollable Dialog1" onTouchTap={this.handleOpen} onClick={this.handleOpen} />
+                <RaisedButton label="Scrollable Dialog" onTouchTap={this.handleOpen} onClick={this.handleOpen} />
                 <Dialog
                     actions={actions}
                     modal={false}
@@ -106,20 +73,32 @@ class MyDialog extends React.Component {
                     onRequestClose={this.handleClose}
                     autoScrollBodyContent={false}>
 
-                        <div className="my-row arrange-horizontally dialog-top">
-                            <div className="section-left">
-                                Left
+                        <div className="row dialog-top">
+                            <div className="col-xs-2 section-left">
+                                <div className="box">
+                                    <ButtonIcon
+                                        onClicked={this.closeDialog}
+                                        classN="grey_bar"
+                                        tooltipPosition="top-right"
+                                        size="xsXsSmall"
+                                        iconName="close-x"
+                                        disable={false}/>
+                                </div>
                             </div>
-                            <div className="section-center">
-                                Center
+                            <div className="col-xs-8 section-center headline">
+                                <div className="box">
+                                    This is dialog title
+                                </div>
                             </div>
-                            <div className="section-right">
-                                    <button className="dialogButton"  onClick={this.closeDialog}>Submit</button>
+                            <div className="col-xs-2 section-right">
+                                <div className="box">
+                                    <button className="dialogButton"  onClick={this.closeDialog}>{this.props.dialog.textBut}</button>
+                                </div>
                             </div>
                         </div>
-                        <RadioButtonGroup name="shipSpeed" defaultSelected="not_light" className="dialog-body">
-                            This is the body. it is scrol outo...
-                        </RadioButtonGroup>
+                        <div className="dialog-body">
+                            <BodyComponent></BodyComponent>
+                        </div>
 
                 </Dialog>
             </div>
@@ -129,10 +108,13 @@ class MyDialog extends React.Component {
 
 MyDialog.propTypes = {
     //myProp: PropTypes.string.isRequired
+    myTextButton: PropTypes.string.isRequired,
+    myBodyComponent: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
     return {
+        myBodyComponent: ownProps.bodyComponent,
         dialog: state.dialogReducer
     };
 }

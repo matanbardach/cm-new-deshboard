@@ -41,6 +41,13 @@ const icons = ({name, size}) => {
                     <path d={SvgConst.CAREPLAN}></path>
                 </svg>
             );
+        }// 'close-x'
+        case 'close-x':{
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox={sizeViewBox}>
+                    <path d={SvgConst.CLOSE_WINDOW}></path>
+                </svg>
+            );
         }
         default:
             return (<div></div>)

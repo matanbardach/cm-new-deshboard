@@ -9,20 +9,22 @@ import Layout2 from './dumbComponent/Layout2';
 
 class Layout extends React.Component {
     constructor(props, context) {
-        super(props, context)
+        super(props, context);
     }
 
     render() {
 
         //const layoutClassName = this.props.layout.className;
         return (
-           <Layout2 layoutClassName={this.props.layout.className}></Layout2>
+           <Layout2 layoutClassName={this.props.layout.className}/>
         );
     }
 }
 
 Layout.propTypes = {
     //myProp: PropTypes.string.isRequired
+    layout: PropTypes.object.isRequired,
+    state: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

@@ -1,4 +1,4 @@
-import * as types from './constant/actionTypes'
+import * as types from './constant/actionTypes';
 export function homeIconClicked() {
     return {type: types.HOME_CLICK, payload: {}};
 }

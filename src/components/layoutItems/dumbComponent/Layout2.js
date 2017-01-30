@@ -4,10 +4,9 @@ import {bindActionCreators} from 'redux';
 import LeftMenu from '../../leftMenu/leftMenu';
 import MyDialog from '../../common/dialog/MyDialog';
 import Layout1 from './Layout1';
-import PatientList from '../../common/listPatient/PatientList';
+//import PatientList from '../../common/listPatient/PatientList';
 
 const Layout2 = ({layoutClassName}) => {
-    const theList = [{id: 1, name: 'first'},{id: 2, name: 'second'},{id: 1, name: 'third'}];
     return (
         <div className="body-big">
             <div className="row">
@@ -43,7 +42,7 @@ const Layout2 = ({layoutClassName}) => {
                                         Top toolbar
                                     </div>
                                     <div className="body-scroll">
-                                            <MyDialog bodyComponent={PatientList}></MyDialog>
+                                            <MyDialog></MyDialog>
                                     </div>
                                 </div>
                             </div>

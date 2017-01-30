@@ -2,8 +2,10 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './action';
+import * as dialogAction from '../common/dialog/actions';
 import ButtonIcon from '../common/button/buttonIcon';
 import './styles/style.less';
+import PatientList from '../common/listPatient/PatientList';
 
 
 class LeftMenu extends React.Component {
@@ -18,38 +20,45 @@ class LeftMenu extends React.Component {
     }
 
     homeScreenClick(){
-        console.log("The home screen clicked!");
+        //console.log("The home screen clicked!");
         const actions = this.props.actions;
         actions.homeIconClicked();
         this.changeLayout('home');
+
+        const dialogActions = this.props.dialogAction;
+
+        // first set body reducer!
+        dialogActions.changeBodyReducer(PatientList);
+
+        dialogActions.openDialog('home');
     }
     alertScreenClick(){
-        console.log("The alert screen clicked!");
+        //console.log("The alert screen clicked!");
         const actions = this.props.actions;
         actions.alertIconClicked();
         this.changeLayout('alert');
     }
     patientScreenClick(){
-        console.log("The patient screen clicked!");
+        //console.log("The patient screen clicked!");
         const actions = this.props.actions;
         actions.patientIconClicked();
         this.changeLayout('patient');
     }
     massageScreenClick(){
-        console.log("The message screen clicked!");
+        //console.log("The message screen clicked!");
         const actions = this.props.actions;
         actions.messageIconClicked();
         this.changeLayout('message');
     }
     carePlanScreenClick(){
-        console.log("The care plan screen clicked!");
+        //console.log("The care plan screen clicked!");
         const actions = this.props.actions;
         actions.carePlanIconClicked();
         this.changeLayout('carePlan');
     }
 
     changeLayout(section){
-        console.log("Change layout to ", section, "'s layout");
+        //console.log("Change layout to ", section, "'s layout");
         const actions = this.props.actions;
         actions.changeLayout(section);
     }
@@ -116,7 +125,8 @@ class LeftMenu extends React.Component {
 }
 
 LeftMenu.propTypes = {
-    //myProp: PropTypes.string.isRequired
+    actions: PropTypes.object.isRequired,
+    dialogAction: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -127,7 +137,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(actions, dispatch)
+        actions: bindActionCreators(actions, dispatch),
+        dialogAction: bindActionCreators(dialogAction, dispatch)
     };
 }
 

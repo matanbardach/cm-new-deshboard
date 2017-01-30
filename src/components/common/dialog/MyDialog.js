@@ -60,11 +60,14 @@ class MyDialog extends React.Component {
         ];
 
 
-        //console.log("hhhhhhhhhhhhhhhhhhhhhh: ",this.props.myBodyCmpo);
-        const BodyComponent =  this.props.myBodyComponent;
+        // <RaisedButton label="Scrollable Dialog" onTouchTap={this.handleOpen} onClick={this.handleOpen} />
+
+
+        //const BodyComponent =  this.props.myBodyComponent;
+        const BodyComponent =  this.props.dialog.dialogReducer;
         return (
             <div>
-                <RaisedButton label="Scrollable Dialog" onTouchTap={this.handleOpen} onClick={this.handleOpen} />
+
                 <Dialog
                     actions={actions}
                     modal={false}
@@ -98,6 +101,7 @@ class MyDialog extends React.Component {
                         </div>
                         <div className="dialog-body">
                             <BodyComponent></BodyComponent>
+
                         </div>
 
                 </Dialog>
@@ -108,13 +112,11 @@ class MyDialog extends React.Component {
 
 MyDialog.propTypes = {
     //myProp: PropTypes.string.isRequired
-    myTextButton: PropTypes.string.isRequired,
-    myBodyComponent: PropTypes.func.isRequired
+    actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
     return {
-        myBodyComponent: ownProps.bodyComponent,
         dialog: state.dialogReducer
     };
 }

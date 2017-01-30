@@ -1,0 +1,115 @@
+.list-item {
+  position: relative;
+  padding: 0px 16px;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.list-item .my-avatar {
+  margin-right: 16px;
+}
+.list-item {
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &.active {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.2);
+  }
+}
+.list-item:hover {
+  background-color: #ffffff;
+}
+.list-item:hover {
+  background-color: #ffffff;
+}
+
+.my-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: content-box;
+
+  &.selected {
+    border: solid 4px #4285f4;
+  }
+}
+.list-item .my-avatar {
+  margin-right: 16px;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    background: #f2f2f2;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    padding-top: 300%;
+    padding-left: 300%;
+    margin-top: -150%;
+    margin-left: -150%;
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  &:active:after {
+    padding-top: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-left: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+
+}
+
+
+
+//.ripple {
+//  position: relative;
+//  overflow: hidden;
+//
+//  &:after {
+//    content: '';
+//    position: absolute;
+//    top: 50%;
+//    left: 50%;
+//    width: 5px;
+//    height: 5px;
+//    background: rgba(255, 255, 255, .5);
+//    opacity: 0;
+//    border-radius: 100%;
+//    transform: scale(1, 1) translate(-50%);
+//    transform-origin: 50% 50%;
+//  }
+//
+//  &:active:after {
+//    padding-top: 0;
+//    padding-left: 0;
+//    margin-top: 0;
+//    margin-left: 0;
+//    opacity: 1;
+//    transition: 0s;
+//  }
+//
+//}
+//@keyframes ripple {
+//  0% {
+//    transform: scale(0, 0);
+//    opacity: 1;
+//  }
+//  20% {
+//    transform: scale(25, 25);
+//    opacity: 1;
+//  }
+//  100% {
+//    opacity: 0;
+//    transform: scale(40, 40);
+//  }
+//}

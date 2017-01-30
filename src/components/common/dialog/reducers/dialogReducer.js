@@ -1,8 +1,10 @@
 import * as types from '../const/actionTypes';
+//import PatientList from '../../../common/listPatient/PatientList';
 const initializeState = {
                             open: false,
                             textBut: 'Submit',
                             disableBut: false,
+                            dialogReducer: null,
                             pageNumberArr: [{pageNum: 1, text: 1, active: true},
                                             {pageNum: 2, text: 2, active: false},
                                             {pageNum: 3, text: 3, active: true}]};
@@ -11,9 +13,16 @@ export default function dialogReducer(state = initializeState, action) {
     switch (action.type) {
         case types.OPEN_DIALOG:
         {
-            return Object.assign({}, state, {
-                open: true
-            });
+            // open only if there is dialogReducer
+            if(state.dialogReducer){
+                return Object.assign({}, state, {
+                    open: true
+                });
+                return Object.assign({}, state, {
+
+                });
+            }
+
         }
         case types.CLOSE_DIALOG:
         {
@@ -26,6 +35,17 @@ export default function dialogReducer(state = initializeState, action) {
             if(action.butText){
                 return Object.assign({}, state, {
                     textBut: action.butText
+                });
+            }
+            return Object.assign({}, state, {
+
+            });
+        }
+        case types.CHANGE_DIALOG_REDUCER:
+        {
+            if(action.reducer){
+                return Object.assign({}, state, {
+                    dialogReducer: action.reducer
                 });
             }
             return Object.assign({}, state, {

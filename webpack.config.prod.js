@@ -15,7 +15,7 @@ const GLOBALS = {
 };
 export default {
     debug: true,
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     noInfo: false,
     entry: path.resolve(__dirname, 'src/index'),
     target: 'web',

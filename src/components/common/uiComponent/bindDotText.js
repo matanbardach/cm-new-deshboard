@@ -4,27 +4,27 @@ import {bindActionCreators} from 'redux';
 import './bindDiagnosis.style.less';
 
 
-const bindDiagnosis = ({diagnosis, recentAlert}) => {
-    if(recentAlert.id){
-        if(diagnosis){
+const bindDotToText = ({dotText, dotItem}) => {
+    if(dotItem.id){
+        if(dotText){
             return(
                 <div>
                     <div className="alert-dot"></div>
-                    <span className="item-list-diagnosis">{diagnosis}</span>
+                    <span className="item-list-diagnosis">{dotText}</span>
                 </div>
             );
         }
         return(
                 <div>
                     <div className="alert-dot"></div>
-                </div>); // if(!diagnosis)
+                </div>); // if(!dotText)
     }
-    // if !recentAlert
-    if(diagnosis){
+    // if !dotItem
+    if(dotText){
         return(
             <div>
                 <div className="alert-dot no-alert"></div>
-                <span className="item-list-diagnosis">{diagnosis}</span>
+                <span className="item-list-diagnosis">{dotText}</span>
             </div>
         );
     }
@@ -34,9 +34,9 @@ const bindDiagnosis = ({diagnosis, recentAlert}) => {
             </div>);
 };
 
-bindDiagnosis.propTypes = {
-    diagnosis: PropTypes.string,
-    recentAlert:PropTypes.object
+bindDotToText.propTypes = {
+    dotText: PropTypes.string,
+    dotItem:PropTypes.object
 };
 
-export default bindDiagnosis;
+export default bindDotToText;

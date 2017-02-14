@@ -1,5 +1,4 @@
 import * as types from '../const/actionTypes';
-//import PatientList from '../../../common/listPatient/PatientList';
 const initializeState = {
                             open: false,
                             textBut: 'Submit',
@@ -18,10 +17,10 @@ export default function dialogReducer(state = initializeState, action) {
                 return Object.assign({}, state, {
                     open: true
                 });
-                return Object.assign({}, state, {
-
-                });
             }
+            return Object.assign({}, state, {
+
+            });
 
         }
         case types.CLOSE_DIALOG:
@@ -44,9 +43,17 @@ export default function dialogReducer(state = initializeState, action) {
         case types.CHANGE_DIALOG_REDUCER:
         {
             if(action.reducer){
+                if(action.params){
+                    return Object.assign({}, state, {
+                        dialogReducer: action.reducer,
+                        params: action.params
+                    });
+                }
                 return Object.assign({}, state, {
-                    dialogReducer: action.reducer
+                    dialogReducer: action.reducer,
+                    params: {}
                 });
+
             }
             return Object.assign({}, state, {
 

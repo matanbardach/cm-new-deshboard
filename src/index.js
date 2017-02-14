@@ -1,3 +1,4 @@
+/*eslint-disable import/default */
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
@@ -19,7 +20,6 @@ import * as myStore from './components/common/store.service';
 import './components/layoutItems/styles.less';
 import './styles/styles.less';
 import '../node_modules/flexboxgrid/css/flexboxgrid.min.css';
-import  './images/user_male.jpeg';
 const store = configureStore();
 myStore.setStore(store);
 // initial the init state!

@@ -4,55 +4,27 @@ import {bindActionCreators} from 'redux';
 import LeftMenu from '../../leftMenu/leftMenu';
 import MyDialog from '../../common/dialog/MyDialog';
 import Layout1 from './Layout1';
-//import PatientList from '../../common/listPatient/PatientList';
+import List from '../../common/List/List';
+import * as FakeData from '../../common/fakeData';
+import ItemComponent from '../../common/listItems/patientListItem';
+import Body from '../../body/body';
 
 const Layout2 = ({layoutClassName}) => {
     return (
         <div className="body-big">
+            <MyDialog/>
             <div className="row">
+
                 <div className="left-menu box">
                     <LeftMenu/>
                 </div>
+
                 <div className={"body-right col-xs "+ layoutClassName}>
-                    <div className="box">
-
-                        <div className="row body-row">
-                            <div className="col-xs-12 top-shell">
-                                <div className="box light-theme">
-                                    <div className="primary">
-                                        Top shell!
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="box">
-                                    <div className="red-back top-body top-corner-radius">Card</div>
-                                    <div className="green-back top-body"></div>
-                                    <div className="red-back top-body"></div>
-                                    <div className="green-back top-body"></div>
-                                    <div className="red-back top-body"></div>
-
-
-                                </div>
-                            </div>
-                            <div className="col-xs card-details">
-                                <div className="box">
-                                    <div className="top-toolbar-body">
-                                        Top toolbar
-                                    </div>
-                                    <div className="body-scroll">
-                                            <MyDialog></MyDialog>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <Body/>
                 </div>
             </div>
         </div>
-    );
+    );  // <List myList={FakeData.patientList} ItemComponent={ItemComponent}/>
 };
 
 Layout2.propTypes = {

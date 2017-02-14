@@ -1,0 +1,4 @@
+export const SHOW_CARD = 'SHOW_CARD';
+export const HIDE_CARD = 'HIDE_CARD';
+export const HIDE_CARD_DETAILS = 'HIDE_CARD_DETAILS';
+export const SHOW_CARD_DETAILS = 'SHOW_CARD_DETAILS';

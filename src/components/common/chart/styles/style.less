@@ -1,0 +1,641 @@
+
+.bar-chart {
+  overflow: auto;
+}
+
+.bar-value {
+  font-size: 18px;
+  font-family: LatoBold;
+}
+
+.background {
+  fill: #f2f2f2;
+  shape-rendering: geometricPrecision;
+}
+
+.axis path,
+.axis line {
+  display: none;
+}
+
+.tick text {
+  fill: #000;
+}
+
+.date-line {
+  fill: none;
+  stroke: #d33e52;
+  stroke-opacity: .6;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.edge-line {
+  fill: none;
+  stroke: #9e80ff;
+  //  stroke-opacity: .6;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.alert-line {
+  fill: none;
+  stroke: #d33e52;
+  //  stroke-opacity: .6;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+//url(#area-gradient);
+.area {
+  fill: #9e80ff;
+  fill-opacity: 0.2;
+}
+
+.dot {
+  //  stroke: #fff;
+  fill: #9e80ff;
+  stroke-width: 0px;
+}
+
+.label-small {
+  fill: #green;
+  fill-opacity: 1;
+  font-size: 12px;
+}
+
+.label-large {
+  fill: #27c5ff;
+  fill-opacity: 1;
+  font-size: 16px;
+}
+
+.icon {
+  fill: #ff0312;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  shape-rendering: geometricPrecision;
+}
+
+
+.range .edge-line {
+
+  fill: none;
+  stroke: #999999;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.range .grid-line {
+  fill: none;
+  stroke: #cccccc;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.range .line {
+  stroke-width: 2px;
+}
+
+.range .scatter.location .dot {
+  fill: #08b87d;
+  stroke-width: 0px;
+}
+
+.range .scatter.steps .dot {
+  fill: #4dbfec;
+  stroke-width: 0px;
+}
+
+.range .scatter.sleep .dot {
+  fill: #f5a623;
+  stroke-width: 0px;
+}
+
+
+
+.range .line.location {
+  fill: none;
+  stroke:  #08b87d;
+}
+
+.range .line.steps {
+  fill: none;
+  stroke:  #4dbfec;
+}
+
+.range .line.sleep {
+  fill: none;
+  stroke:  #f5a623;
+}
+
+
+.y.axis .tick text {
+  fill: #cccccc
+}
+
+.x.axis .tick text {
+  fill: #cccccc;
+  font-weight: bold;
+}
+
+
+.area-chart.location .area {
+  fill: #f5a623;
+  fill-opacity: 1;
+}
+
+.area-chart.sleep .area {
+  fill: #08b87d;
+  fill-opacity: 1;
+}
+
+.area-chart.steps .area {
+  fill: #4dbfec;
+  fill-opacity: 1;
+}
+
+.area-chart .grid-line {
+  fill: none;
+  stroke: #cccccc;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.radial-chart.meds .arc {
+  fill: #4BAE81;
+}
+
+.radial-chart.treatment .arc {
+  fill: #FC6D53;
+}
+
+.radial-chart {
+  svg {
+    margin: auto;
+  }
+
+  .background {
+    fill: #FFFFFF;
+    fill-opacity: 0.01;
+  }
+
+  .component {
+    fill: #e1e1e1;
+  }
+
+  .component .label {
+    text-anchor: middle;
+    font-size: 16px;
+    fill: #4478b8;
+  }
+
+  .arc {
+    stroke-weight:0.1;
+    fill: #4e8fff;
+  }
+
+
+  .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+  }
+
+
+  .label {
+    font-family:  Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+  }
+}
+
+.bar-chart {
+  #tooltip {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  #tooltip.hidden {
+    display: none;
+  }
+
+  #tooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  rect {
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.5s;
+    cursor:pointer;
+  }
+}
+
+.pie-chart {
+
+  //  margin-top: -100px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pie-chart {
+
+  .arc path {
+    //    stroke: white;
+    stroke-width: 5px;
+  }
+
+  .arc {
+    opacity: 0.75;
+  }
+
+  .arc.hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  .arc {
+    transition: opacity 250ms linear;
+    -moz-transition: opacity 250ms linear;
+    -webkit-transition: opacity 250ms linear;
+  }
+
+  .pie-indicator line{
+    stroke: black;
+    stroke-width: 1.5px;
+  }
+
+  .pie-indicator text {
+    text-transform:uppercase;
+  }
+
+  .pie-indicator text.value{
+  }
+
+  .pie-indicator.right text.value{
+    text-anchor: end;
+  }
+
+  .pie-indicator.left text.category{
+    font-weight: bold;
+    text-anchor: start;
+  }
+
+  .pie-indicator.right text.category{
+    font-weight: bold;
+    text-anchor: end;
+  }
+
+
+  .chart-tooltip text{
+    font: 12.5px ariel bold;
+  }
+
+  .chart-tooltip rect{
+    stroke: rgb(0, 0, 0);
+  }
+}
+
+.alert-container {
+  cursor: pointer;
+}
+
+
+.donut-chart {
+  svg {
+    margin: auto;
+  }
+  path.slice{
+    stroke-width:2px;
+  }
+
+  polyline{
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+  }
+}
+
+
+.chart-centered {
+  svg {
+    margin: auto;
+  }
+}
+
+
+
+.new-line-chart {
+  &.phq9-static {
+    .y.axis .tick text {
+      fill: #cccccc;
+    }
+
+    .x.axis .tick text {
+      fill: #cccccc;
+      font-weight: bold;
+    }
+  }
+
+
+  .background {
+    fill: #f2f2f2;
+    shape-rendering: geometricPrecision;
+  }
+
+  .axis path,
+  .axis line {
+    display: none;
+  }
+
+  .tick text {
+    fill: #000;
+    color: #000;
+  }
+
+
+
+  .grid-line {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 1.5px;
+  }
+
+  .line {
+    fill: none;
+    stroke-width: 3.5px;
+  }
+
+  .date-line {
+    fill: none;
+    stroke: #d33e52;
+    stroke-opacity: .6;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+  }
+
+  .edge-line {
+    fill: none;
+    stroke: #9e80ff;
+    //  stroke-opacity: .6;
+    stroke-width: 2px;
+    shape-rendering: crispEdges;
+  }
+
+  .alert-line {
+    fill: none;
+    stroke: #d33e52;
+    //  stroke-opacity: .6;
+    stroke-width: 2px;
+    shape-rendering: crispEdges;
+  }
+
+  .area {
+    fill: #9e80ff;
+    fill-opacity: 0.2;
+  }
+
+  .dot {
+    //  stroke: #fff;
+    fill: #9e80ff;
+    stroke-width: 0px;
+  }
+
+  .label-small {
+    fill: #green;
+    fill-opacity: 1;
+    font-size: 12px;
+  }
+
+  .label-large {
+    fill: #27c5ff;
+    fill-opacity: 1;
+    font-size: 16px;
+  }
+
+  .icon {
+    fill: #ff0312;
+    stroke: #fff;
+    stroke-width: 1.5px;
+    shape-rendering: geometricPrecision;
+  }
+
+
+  .range .edge-line {
+
+    fill: none;
+    stroke: #999999;
+    //  stroke-opacity: .6;
+    stroke-width: 2px;
+    shape-rendering: crispEdges;
+  }
+
+  .range .grid-line {
+    fill: none;
+    stroke: #cccccc;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+  }
+
+  .range .line {
+    stroke-width: 2px;
+  }
+
+  .range .scatter.location .dot {
+    fill: #08b87d;
+    stroke-width: 0px;
+  }
+
+  .range .scatter.steps .dot {
+    fill: #4dbfec;
+    stroke-width: 0px;
+  }
+
+  .range .scatter.sleep .dot {
+    fill: #f5a623;
+    stroke-width: 0px;
+  }
+
+
+
+  .range .line.location {
+    fill: none;
+    stroke:  #08b87d;
+  }
+
+  .range .line.steps {
+    fill: none;
+    stroke:  #4dbfec;
+  }
+
+  .range .line.sleep {
+    fill: none;
+    stroke:  #f5a623;
+  }
+
+
+  .y.axis .tick text {
+    //fill: #cccccc
+    fill: #000000;
+  }
+
+  .x.axis .tick text {
+    //fill: #cccccc;
+    fill: #000000;
+    font-weight: bold;
+  }
+
+  .axis text {
+    color: #000000;
+    opacity: 0.3;
+    font-family: sans-serif;
+    font-size: 11px;
+  }
+
+  .area-chart.location .area {
+    fill: #f5a623;
+    fill-opacity: 1;
+  }
+
+  .area-chart.sleep .area {
+    fill: #08b87d;
+    fill-opacity: 1;
+  }
+
+  .area-chart.steps .area {
+    fill: #4dbfec;
+    fill-opacity: 1;
+  }
+
+  .area-chart .grid-line {
+    fill: none;
+    stroke: #cccccc;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+  }
+
+
+  .alert-container {
+    cursor: pointer;
+  }
+
+  .chart-centered {
+    svg {
+      margin: auto;
+    }
+
+  }
+
+}
+
+
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 6px;
+  font-size: 12px;
+  font-family: arial;
+  color: #fff;
+  border-radius: 5px;
+
+  &.questionnaire:after {
+    color: #4285f4;
+  }
+
+  &.location:after {
+    color: #fa893f;
+  }
+
+  &.steps:after {
+    color: #07b97e;
+  }
+
+  &.meds:after {
+    color: #c370dc;
+  }
+
+  &.phq9:after {
+    color: #5ca2f8;
+  }
+
+  &.stress:after {
+    color: green;
+  }
+
+  &.sleep:after {
+    color: #fa893f;
+  }
+
+  &.weight:after,  &.glocus:after{
+    color: #681ebe;
+  }
+
+  &.presure:after {
+    color: red;
+  }
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: #cccccc;
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 92%;
+  left: 0;
+}
+.white-icons{
+  svg path {
+    fill: #ffffff
+  }
+}
+
+
+
+.chart-container-box{
+  width: 50%
+}

@@ -8,6 +8,6 @@ export function closeDialog(section) {
 export function changeBuText(butText) {
     return {type: types.CHANGE_DIALOG_BUT_TEXT, butText: butText};
 }
-export function changeBodyReducer(reducer) {
-    return {type: types.CHANGE_DIALOG_REDUCER, reducer: reducer};
+export function changeBodyReducer(reducer, params) {
+    return {type: types.CHANGE_DIALOG_REDUCER, reducer: reducer, params: params};
 }

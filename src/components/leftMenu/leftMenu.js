@@ -5,7 +5,9 @@ import * as actions from './action';
 import * as dialogAction from '../common/dialog/actions';
 import ButtonIcon from '../common/button/buttonIcon';
 import './styles/style.less';
-import PatientList from '../common/listPatient/PatientList';
+import PatientList from '../common/List/List';
+import PatientListItem from '../common/listItems/patientListItem';
+import * as fakeData from '../common/fakeData';
 
 
 class LeftMenu extends React.Component {
@@ -28,7 +30,11 @@ class LeftMenu extends React.Component {
         const dialogActions = this.props.dialogAction;
 
         // first set body reducer!
-        dialogActions.changeBodyReducer(PatientList);
+        const params = {
+            myList: fakeData.patientList,
+            ItemComponent: PatientListItem
+        };
+        dialogActions.changeBodyReducer(PatientList, params);
 
         dialogActions.openDialog('home');
     }
@@ -61,6 +67,29 @@ class LeftMenu extends React.Component {
         //console.log("Change layout to ", section, "'s layout");
         const actions = this.props.actions;
         actions.changeLayout(section);
+        switch (section){
+            case 'home': {
+                break;
+            }
+            case 'alert': {
+                actions.showCard();
+                break;
+            }
+            case 'patient': {
+                actions.hideCard();
+                break;
+            }
+            case 'message': {
+                actions.showDetails();
+                break;
+            }
+            case 'carePlan': {
+                actions.hideDetails();
+                break;
+            }
+            default:
+                break;
+        }
     }
 
     render() {

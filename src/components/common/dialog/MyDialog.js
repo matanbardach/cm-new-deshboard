@@ -43,17 +43,19 @@ class MyDialog extends React.Component {
                 marginTop: 16
             }
         };
+        const primary = true;
+        const keyboardFocused = true;
         const actions = [
             <FlatButton
                 label="Cancel"
-                primary={true}
+                primary={primary}
                 onClick={this.chengText}
                 onTouchTap={this.handleOpen}
             />,
             <FlatButton
                 label="Submit"
-                primary={true}
-                keyboardFocused={true}
+                primary={primary}
+                keyboardFocused={keyboardFocused}
                 onClick={this.handleClose}
                 onTouchTap={this.handleClose}
             />
@@ -64,10 +66,11 @@ class MyDialog extends React.Component {
 
 
         //const BodyComponent =  this.props.myBodyComponent;
+        // Todo need pass dialog props to body component!
         const BodyComponent =  this.props.dialog.dialogReducer;
+        const params = this.props.dialog.params;
         return (
             <div>
-
                 <Dialog
                     actions={actions}
                     modal={false}
@@ -100,7 +103,11 @@ class MyDialog extends React.Component {
                             </div>
                         </div>
                         <div className="dialog-body">
-                            <BodyComponent></BodyComponent>
+                            <BodyComponent
+                                {...params}
+                            />
+
+
 
                         </div>
 
@@ -111,7 +118,7 @@ class MyDialog extends React.Component {
 }
 
 MyDialog.propTypes = {
-    //myProp: PropTypes.string.isRequired
+    dialog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
 };
 

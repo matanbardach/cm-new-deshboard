@@ -16,11 +16,11 @@ const styles = {
 export default class DialogBox extends React.Component {
 
 
-    handleOpen = () => {
+    handleOpen() {
         this.setState({open: true});
     };
 
-    handleClose = () => {
+    handleClose(){
         this.setState({open: false});
     };
 

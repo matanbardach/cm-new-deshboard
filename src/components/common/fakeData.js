@@ -4317,4 +4317,4 @@ export const patientList = [
             "readAt": "2017-01-27T09:47:06.046Z"
         }
     }
-]
+];

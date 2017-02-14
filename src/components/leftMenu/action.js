@@ -18,3 +18,18 @@ export function carePlanIconClicked() {
 export function changeLayout(section) {
     return {type: types.CHANGE_LAYOUT_SECTION, section: section};
 }
+
+
+export function showCard() {
+    return {type: types.SHOW_CARD, payload: {}};
+}
+export function hideCard() {
+    return {type: types.HIDE_CARD, payload: {}};
+}
+export function showDetails() {
+    return {type: types.SHOW_CARD_DETAILS, payload: {}};
+}
+export function hideDetails() {
+    return {type: types.HIDE_CARD_DETAILS, payload: {}};
+}
+

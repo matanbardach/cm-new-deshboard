@@ -9,7 +9,6 @@ import compression from 'compression';
 
 const port = 3000;
 const app = express();
-const compiler = webpack(config);
 
 
 app.use(compression());

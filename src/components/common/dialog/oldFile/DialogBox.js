@@ -6,8 +6,8 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const styles = {
     radioButton: {
-        marginTop: 16,
-    },
+        marginTop: 16
+    }
 };
 
 /**
@@ -18,11 +18,11 @@ export default class DialogBox extends React.Component {
 
     handleOpen() {
         this.setState({open: true});
-    };
+    }
 
     handleClose(){
         this.setState({open: false});
-    };
+    }
 
     render() {
         const actions = [
@@ -36,7 +36,7 @@ export default class DialogBox extends React.Component {
                 primary={true}
                 keyboardFocused={true}
                 onTouchTap={this.handleClose}
-            />,
+            />
         ];
 
         const radios = [];

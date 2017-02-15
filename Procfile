@@ -1,1 +1,1 @@
-web: npm run postbuild
+web: node dist-server/server.js

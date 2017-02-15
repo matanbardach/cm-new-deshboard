@@ -2,6 +2,9 @@ import React, {PropTypes} from 'react';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import Icons from '../icons/icons';
+import './variables.less';
+import './icon-button.less';
+
 
 const styles = {
     xsXsSmallIcon: {

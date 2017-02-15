@@ -2,6 +2,9 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as FakeData from '../../common/fakeData';
+import './list.less';
+
+
 const List = ({myList, ItemComponent}) => {
     const theArrList = myList;
         const listItems = theArrList.map(function (item, i) {

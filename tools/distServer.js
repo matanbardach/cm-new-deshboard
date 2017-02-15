@@ -4,6 +4,7 @@ import path from 'path';
 import config from '../webpack.config.prod';
 import open from 'open';
 import compression from 'compression';
+import favicon from 'serve-favicon';
 
 /* eslint-disable no-console */
 
@@ -12,6 +13,7 @@ const app = express();
 
 
 app.use(compression());
+app.use(favicon(__dirname + '/favicon.ico'));
 app.use(express.static('dist'));
 
 app.get('*', function(req, res) {

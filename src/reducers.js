@@ -7,6 +7,7 @@ import cardReducer from './components/card/reducers/cardReducer';
 import bodyReducer from './components/body/reducers/bodyReducer';
 import cardDetailsReducer from './components/cardDetails/reducers/cardDetailsReducer';
 import topShellReducer from './components/topShell/reducers/topShellReducer';
+import loginReducer from './components/login/reducers/loginReducer';
 
 
 // To this file we add the all reducers of the project.
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     bodyReducer,
     cardReducer,
     cardDetailsReducer,
-    topShellReducer
+    topShellReducer,
+    loginReducer
 });
 
 

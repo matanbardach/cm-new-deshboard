@@ -5,6 +5,7 @@ import Help from 'material-ui/svg-icons/action/help';
 import Alert from 'material-ui/svg-icons/alert/warning';
 import Patient from 'material-ui/svg-icons/social/person';
 import SvgIcon from 'material-ui/SvgIcon';
+import './icon.less';
 
 const icons = ({name, size}) => {
     let sizeViewBox = '0 0 36 36';   // this is the size of the most small...

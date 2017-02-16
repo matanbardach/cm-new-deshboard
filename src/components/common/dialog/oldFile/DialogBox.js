@@ -25,16 +25,19 @@ export default class DialogBox extends React.Component {
     }
 
     render() {
+        const primary = true;
+        const keyboardFocused = true;
+        const autoScrollBodyContent = true;
         const actions = [
             <FlatButton
                 label="Cancel"
-                primary={true}
+                primary={primary}
                 onTouchTap={this.handleClose}
             />,
             <FlatButton
                 label="Submit"
-                primary={true}
-                keyboardFocused={true}
+                primary={primary}
+                keyboardFocused={keyboardFocused}
                 onTouchTap={this.handleClose}
             />
         ];
@@ -60,7 +63,7 @@ export default class DialogBox extends React.Component {
                     modal={false}
                     open={this.state.open}
                     onRequestClose={this.handleClose}
-                    autoScrollBodyContent={true}
+                    autoScrollBodyContent={autoScrollBodyContent}
                 >
                     <RadioButtonGroup name="shipSpeed" defaultSelected="not_light">
                         {radios}

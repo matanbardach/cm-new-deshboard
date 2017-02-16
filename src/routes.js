@@ -8,6 +8,6 @@ import login from './components/login/login';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={layout}/>
-    <Route path="login" component={login}></Route>
+    <Route path="login" component={login}/>
   </Route>
 );

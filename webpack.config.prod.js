@@ -4,10 +4,10 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 //import lessLoader from 'less-loader';
 //import cssLoader from 'css-loader';
 
-var autoprefix = '{browsers:["Android 2.3", "Android >= 4", "Chrome >= 20", "Firefox >= 24", "Explorer >= 8", "iOS >= 6", "Opera >= 12", "Safari >= 6"]}';//var cssLoaders = ['css-loader', 'autoprefixer-loader?' + autoprefix];
-var cssLoaders = ['css-loader', 'autoprefixer-loader?' + autoprefix];
+let autoprefix = '{browsers:["Android 2.3", "Android >= 4", "Chrome >= 20", "Firefox >= 24", "Explorer >= 8", "iOS >= 6", "Opera >= 12", "Safari >= 6"]}';//var cssLoaders = ['css-loader', 'autoprefixer-loader?' + autoprefix];
+let cssLoaders = ['css-loader', 'autoprefixer-loader?' + autoprefix];
 //var cssLoaders = ['css-loader'];
-var lessLoaders = cssLoaders.slice(0);
+let lessLoaders = cssLoaders.slice(0);
     lessLoaders.push('less-loader');
 
 const GLOBALS = {

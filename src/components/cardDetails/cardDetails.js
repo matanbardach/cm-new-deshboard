@@ -43,24 +43,26 @@ class CardDetails extends React.Component {
                 </div>
 
                 <div className="body-scroll">
-                    <LineChart
-                        data={lineChart.data}
-                        domain={lineChart.domain}
-                        nature={lineChart.nature}
-                        type={lineChart.type}
-                        click={lineChart.clickGraph}/>
-                    <LineChart
-                        data={lineChart.data}
-                        domain={lineChart.domain}
-                        nature={lineChart.nature}
-                        type={lineChart.type}
-                        click={lineChart.clickGraph}/>
-                    <LineChart
-                        data={lineChart.data}
-                        domain={lineChart.domain}
-                        nature={lineChart.nature}
-                        type={lineChart.type}
-                        click={lineChart.clickGraph}/>
+                    <div className="chart-wrap">
+                        <LineChart
+                            data={lineChart.data}
+                            domain={lineChart.domain}
+                            nature={lineChart.nature}
+                            type={lineChart.type}
+                            click={lineChart.clickGraph}/>
+                        <LineChart
+                            data={lineChart.data}
+                            domain={lineChart.domain}
+                            nature={lineChart.nature}
+                            type={lineChart.type}
+                            click={lineChart.clickGraph}/>
+                        <LineChart
+                            data={lineChart.data}
+                            domain={lineChart.domain}
+                            nature={lineChart.nature}
+                            type={lineChart.type}
+                            click={lineChart.clickGraph}/>
+                    </div>
                 </div>
             </div>
         );

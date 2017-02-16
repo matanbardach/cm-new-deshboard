@@ -94,7 +94,9 @@ export function LineChart (element, options, nature, parentWidth) {
 
     let originalWidth = width + optionMarginLeftNew + options.margin.right;
     let widthLeftPanelRight = originalWidth*0.1;
-    let widthLeftPanel = originalWidth*0.9;
+    //let widthLeftPanel = originalWidth*0.9;
+    // Todo i change that from *0.9
+    let widthLeftPanel = originalWidth;
 
     /*let svgLeftPannel = d3.select(element).append("svg")
      .attr("class", "svg")
@@ -227,10 +229,9 @@ export function LineChart (element, options, nature, parentWidth) {
 
         // update width
         //width = parseInt(d3.select(element).style('width'), 10) || __width;
-        width = window.innerWidth ||  __width;
+        // width = window.innerWidth ||  __width;
+        //width = width - optionMarginLeftNew - options.margin.right;
         //debugger;
-
-        width = width - optionMarginLeftNew - options.margin.right;
 
 
         if (width < maxWidth) {
@@ -675,8 +676,11 @@ export function TwoLineChart (element, options, nature, parentWidth) {
     let uniqid = randLetter + Date.now();
 
     let originalWidth = width + optionMarginLeftNew + options.margin.right;
-    let widthLeftPanel = originalWidth * 0.9;
+    //let widthLeftPanel = originalWidth * 0.9;
 
+    //let widthLeftPanel = originalWidth * 0.9;
+    // Todo i change that from *0.9
+    let widthLeftPanel = originalWidth;
     let svg = d3.select(element).append("svg")
         .attr("class", "svg")
         .attr('id', 'chart' + uniqid)
@@ -833,8 +837,10 @@ export function TwoLineChart (element, options, nature, parentWidth) {
     self.update = function (__width) {
 
         // update width
-        width = parseInt(d3.select(element).style('width'), 10) || __width;
-        width = width - optionMarginLeftNew - options.margin.right;
+        //width = parseInt(d3.select(element).style('width'), 10) || __width;
+
+
+        //width = width - optionMarginLeftNew - options.margin.right;
 
 
         if (width < maxWidth) {
@@ -1004,13 +1010,13 @@ export function TwoLineChart (element, options, nature, parentWidth) {
         _.forEach(data, function(d){
             d.color = options.hash[options.type];
             d.dotColor = options.hash[options.type];
-            d.type = "typ1";
+            d.type = "type";
 
         });
         _.forEach(data2, function(d){
             d.color = options.hash[options.type2];
             d.dotColor = options.hash[options.type2];
-            d.type = "typ2";
+            d.type = "type2";
 
         });
 
@@ -1192,6 +1198,9 @@ export function TwoLineChart (element, options, nature, parentWidth) {
 
                         d3.select("#inner_point_" + uniqid + "_" + i).style('opacity', '1');
                     }
+
+                    tip.attr('class', 'd3-tip ' + options[d.type]);
+
                     tip.style('background', d.color);
                     tip.show(d, d, this);
                 }
@@ -1241,7 +1250,6 @@ export function TwoLineChart (element, options, nature, parentWidth) {
                     return "<span>" + formatGraphDate(d.x) + "</span>";
             });
         //.html(function(d) { return d.y +'\n'+ formatGraphDate(d.x); });
-
 
         d3.select('.d3-tip').select('::after').style('background', options.hash[options.type]);
         svg.call(tip);
@@ -1314,6 +1322,7 @@ export function stickChart (element, options, nature, parentWidth) {
     let width =  _width - options.margin.left - options.margin.right,
         height = options.height - options.margin.top - options.margin.bottom;
 
+    let originalWidth = width + options.margin.left + options.margin.right;
 
     let data;
     //let segment = $(element).parent().width();
@@ -1355,7 +1364,7 @@ export function stickChart (element, options, nature, parentWidth) {
     let svg = d3.select(element).append("svg")
         .attr("class", "svg")
         .attr('id', 'chart' + uniqid)
-        .attr("width", width + options.margin.left + options.margin.right)
+        .attr("width", originalWidth)
         .attr("height", height + options.margin.top + options.margin.bottom);
 
 
@@ -1450,8 +1459,9 @@ export function stickChart (element, options, nature, parentWidth) {
     self.update = function (__width) {
 
         // update width
-        width = parseInt(d3.select(element).style('width'), 10) || __width;
-        width = width - options.margin.left - options.margin.right;
+        //width = parseInt(d3.select(element).style('width'), 10) || __width;
+
+        //width = width - options.margin.left - options.margin.right;
 
 
         if (width < maxWidth) {

@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as lineChart from './chartsCreator';
+import * as hashConst from './const';
 //import '../styles/style.less';
 
 import ReactDOM from 'react-dom';
@@ -19,24 +20,14 @@ class Chart extends React.Component {
     }
 
     componentDidMount(){
-        const hash = {
-            "meds": "#c370dc",
-            "questionnaire": "#4285f4",
-            "phq9": "#5ca2f8",
-            "stress": "green",
-            "steps": "#07b97e",
-            "location": "#fa893f",
-            "sleep": "#fa893f",
-            "weight": "#681ebe",
-            "glocus": "#681ebe",
-            "presure": "red"
-        };
+        const hash = hashConst.HASH;
+
         const props = this.props;
         let scope = {
             type: props.type,
             static: undefined,
-            bgColor: undefined,
-            dotColor: undefined,
+            bgColor: props.bgColor,
+            dotColor: props.dotColor,
             height: undefined,
             nature: props.nature,
             dateDomain: props.domain
@@ -110,7 +101,7 @@ class Chart extends React.Component {
 
 Chart.propTypes = {
     data: PropTypes.array,
-    domain: PropTypes.object,
+    domain: PropTypes.array,
     nature: PropTypes.string,
     type: PropTypes.string.isRequired,
     click: PropTypes.func

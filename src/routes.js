@@ -5,9 +5,11 @@ import App from './components/App';//eslint-disable-line import/no-named-as-defa
 import buttonIcon from './components/common/button/buttonIcon';
 import login from './components/login/login';
 
+//<IndexRoute component={layout}/>
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={layout}/>
-    <Route path="login" component={login}/>
+    <IndexRoute component={login} realm="careManager"/>
+    <Route path="login" component={login} realm="careManager"/>
+    <Route path="home" component={layout}/>
   </Route>
 );

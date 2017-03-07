@@ -60,6 +60,10 @@ export function changePasswordErrorPasswordUsedAlready(error) {
 export function changePasswordErrorUserIdNotExist(error) {
     return {type: types.CHANGE_PASSWORD_ID_UNEXIST, error: error};
 }
+export function changePasswordApiError(error) {
+    return {type: types.CHANGE_PASSWORD_SERVER_ERROR, error: error};
+}
+
 export function forgotPasswordValidationError(error) {
     return {type: types.FORGOT_PASSWORD_VALIDATION_ERROR, error: error};
 }
@@ -102,11 +106,17 @@ export function changePassword(loginUser) {
                     statusCode: err.statusCode
                 };
                 switch (error.statusCode) {
-                    case errorTypes.USER_ID__NOT_EXIST://401: // user id not exist!
+                    //case errorTypes.USER_ID__NOT_EXIST://401: // user id not exist!
+                    //{
+                    //    dispatch(changePasswordErrorUserIdNotExist(error));
+                    //    break;
+                    //}
+                    case errorTypes.GENERAL_ERROR://402: // error password used already!
                     {
-                        dispatch(changePasswordErrorUserIdNotExist(error));
+                        console.log("hhhhhhhhhhhhh: general error: ", error);
+                        dispatch(changePasswordApiError(error));
                         break;
-                    }
+                    }// if server error!
                     case errorTypes.PASSWORD_USED://402: // error password used already!
                     {
                         dispatch(changePasswordErrorPasswordUsedAlready(error));
@@ -151,6 +161,7 @@ export function loginMain(loginUser) {
                         /**
                          get error like this: {text: "..", statusCode: "...", userId: "..."}
                          **/
+                        console.log("Need change password!!! error: ", err);
                         dispatch(loginErrorNeedChangePassword(err.userId));
                         break;
                     case errorTypes.USER_LOCKED://302: // user is locked!

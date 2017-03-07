@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {browserHistory} from 'react-router';
 import * as actions from './action';
 import LoginPage from './dumbComponent/LoginPage';
 import ChangePassword from './dumbComponent/changePassword';
@@ -140,8 +141,10 @@ class Login extends React.Component {
         actions.changePassword(changeDetails)
             .then((retUser) =>{
                 /* eslint-disable no-console */
+                // Todo if success go to home screen.
                 console.log("The user is: ", retUser);
-                this.backToLogin();
+                browserHistory.push('/home');
+                //this.backToLogin();
             })
             .catch((err) => {
                 /* eslint-disable no-console */
@@ -321,7 +324,6 @@ Login.contextTypes = {
 function mapStateToProps(state, ownProps) {
 
     const reducer = state.loginReducer;
-
     return {
         realm: ownProps.route.realm,
         login: reducer.login,

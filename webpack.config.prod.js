@@ -17,7 +17,10 @@ export default {
     debug: true,
     devtool: 'source-map',
     noInfo: false,
-    entry: path.resolve(__dirname, 'src/index'),
+    entry: [
+        'whatwg-fetch',
+        path.resolve(__dirname, 'src/index')
+    ],
     target: 'web',
     output: {
         path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.

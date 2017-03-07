@@ -276,6 +276,17 @@ export default function loginReducer(state = {}, action) {
             });
 
         }
+        case types.CHANGE_PASSWORD_SERVER_ERROR:
+        {
+            changePassword = _.cloneDeep(state.changePassword);
+            if(!changePassword.error){
+                changePassword.error = {};
+            }
+            changePassword.error.changePasswordFailedText = action.error.text;
+            return Object.assign({}, state, {
+                changePassword: changePassword
+            });
+        }
         case types.CHANGE_PASSWORD_ID_UNEXIST:
         {
             changePassword = _.cloneDeep(state.changePassword);

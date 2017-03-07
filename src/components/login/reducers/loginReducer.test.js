@@ -1097,6 +1097,63 @@ describe('Change Password error handler', () => {
         });
 
     });
+    it('Change Password server error CHANGE_PASSWORD_SERVER_ERROR', () => {
+        const initialState = {
+            login: {
+                loading: false,
+                userName: "simple userName",
+                password: "user password!",
+                userNameErrorText: "",
+                passwordErrorText: "",
+                loginFailedText: ""
+            },
+            changePassword: {
+                userId: 5,
+                newPassword: "theNewPassword",
+                confirmNewPassword: 'theNewPassword',
+                loading: false,
+                error: {
+                    newPassword: "",
+                    confirmNewPassword: "",
+                    changePasswordFailedText: ""
+                }
+            },
+            currentSection: 'changePassword'
+        };
+        let error =
+        {
+            text: errorText.USER_ID__NOT_EXIST,//`user id not exist!`,
+            statusCode: errorTypes.USER_ID__NOT_EXIST//401
+        };
+
+        /////1111111111111
+        const actionServerRequest = actions.changePasswordErrorUserIdNotExist(error);
+        // act
+        const newState = loginReducer(initialState, actionServerRequest);
+        expect(newState).toEqual({
+            login: {
+                loading: false,
+                userName: "simple userName",
+                password: "user password!",
+                userNameErrorText: "",
+                passwordErrorText: "",
+                loginFailedText: ""
+            },
+            changePassword: {
+                userId: 5,
+                newPassword: "theNewPassword",
+                confirmNewPassword: 'theNewPassword',
+                loading: false,
+                error: {
+                    newPassword: "",
+                    confirmNewPassword: "",
+                    changePasswordFailedText: error.text
+                }
+            },
+            currentSection: 'changePassword'
+        });
+
+    });
 });
 
 describe('Forgot password error handler', () => {
